@@ -1,0 +1,23 @@
+/* phase-switcher.component.css */
+.phase-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.phase {
+  padding: 10px;
+  margin: 0 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background-color: #f0f0f0; /* Light grey */
+}
+
+.phase.active {
+  border-color: blue;
+  background-color: #add8e6; /* Light blue */
+}
+
+button {
+  margin: 0 5px;
+}

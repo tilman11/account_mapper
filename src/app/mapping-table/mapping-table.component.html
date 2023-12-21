@@ -1,0 +1,22 @@
+<!-- my-component.component.html -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <table *ngIf="data.length > 0">
+    <tr>
+      <th>CompanyID</th>
+      <th>MainAccount</th>
+      <th>MainAccountDescription</th>
+      <th>Selection</th>
+    </tr>
+    <tr *ngFor="let row of data; let i = index">
+      <td>{{ row.CompanyID }}</td>
+      <td>{{ row.MainAccount }}</td>
+      <td>{{ row.MainAccountDescription }}</td>
+      <td>
+        <select [formControlName]="i">
+          <option *ngFor="let option of dropdownOptions" [value]="option">{{ option }}</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <button type="submit">Submit</button>
+</form>

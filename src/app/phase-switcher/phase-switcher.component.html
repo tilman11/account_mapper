@@ -1,0 +1,20 @@
+<!-- phase-switcher.component.html -->
+<div class="phase-container">
+  <div
+    *ngFor="let phase of phases; let i = index"
+    class="phase"
+    [class.active]="i === currentPhaseIndex"
+  >
+    {{ phase }}
+  </div>
+</div>
+
+<button (click)="goToPreviousPhase()" [disabled]="currentPhaseIndex === 0">
+  Back
+</button>
+<button
+  (click)="goToNextPhase()"
+  [disabled]="currentPhaseIndex === phases.length - 1"
+>
+  Next
+</button>

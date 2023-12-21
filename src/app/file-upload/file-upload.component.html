@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My app</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <!-- file-upload.component.html -->
+    <div
+      class="file-drop-area"
+      (dragover)="onDragOver($event)"
+      (drop)="onDrop($event)"
+      (mouseenter)="hovering = true"
+      (mouseleave)="hovering = false"
+    >
+      Drag and drop your file here or click to select a file
+      <input
+        type="file"
+        (change)="onFileChange($event)"
+        style="display:none;"
+      />
+
+      <div class="info-box" *ngIf="hovering">Drop your Excel file here</div>
+    </div>
+
+    <!-- Success Alert -->
+    <div class="alert-success" *ngIf="fileReadSuccess">
+      Success! File has been processed.
+    </div>
+  </body>
+</html>
